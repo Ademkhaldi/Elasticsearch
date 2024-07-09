@@ -1,0 +1,53 @@
+<p>search-data-aum works!</p>
+
+
+<h2>Search</h2>
+  <form (ngSubmit)="search()">
+    <div>
+      <label for="id">ID:</label>
+      <input type="text" id="id" [(ngModel)]="id" name="id">
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="text" id="date" [(ngModel)]="date" name="date">
+    </div>
+    <div>
+      <label for="assetType">Asset Type:</label>
+      <input type="text" id="assetType" [(ngModel)]="assetType" name="assetType">
+    </div>
+    <div>
+      <label for="client">Client:</label>
+      <input type="text" id="client" [(ngModel)]="client" name="client">
+    </div>
+    <div>
+      <label for="value">Value:</label>
+      <input type="text" id="value" [(ngModel)]="value" name="value">
+    </div>
+    <button type="submit">Search</button>
+  </form>
+  <div *ngIf="dataAums && dataAums.length">
+    <h2>Search Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Asset Type</th>
+          <th>Client</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataAums">
+          <td>{{ data.id }}</td>
+          <td>{{ data.date }}</td>
+          <td>{{ data.assetType }}</td>
+          <td>{{ data.client }}</td>
+          <td>{{ data.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!dataAums || dataAums.length === 0">
+    <p>No results found.</p>
+  </div>
