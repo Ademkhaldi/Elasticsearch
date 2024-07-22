@@ -1,0 +1,12 @@
+.table thead {
+  background-color: #6c757d; // Gris foncé pour l'en-tête
+  color: white; // Couleur du texte en blanc
+}
+
+.table tbody {
+  background-color: #f8f9fa; // Gris clair pour les lignes du corps
+}
+
+.table, .table-bordered td, .table-bordered th {
+  border: 1px solid #dee2e6; // Bordures pour les cellules
+}
